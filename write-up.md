@@ -9,7 +9,7 @@ My goal is to find a undirected graph of 5 nodes with 7 edges, such that:
 For any case of the value permutations, after the edges is converted to directed by comparison on their adjacent nodes,
 there is a path from the greater to the less for any two nodes.
 
-A complete graph of 5 nodes has (5*(5+1)/2 = 15) edges.
-(15 select 7) = 6435 cases.
+A complete graph of 5 nodes has (5*(5-1)/2 = 10) edges.
+(10 select 7) = 120 cases.
 The full permutation of 5 elements = 5! = 120 cases.
 - [ ] permit equal numbers
