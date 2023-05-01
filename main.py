@@ -1,4 +1,4 @@
-from itertools import combinations, islice, permutations
+from itertools import combinations, islice, permutations, product
 from math import comb, perm
 
 count = lambda iterable: sum(1 for _ in iterable)
@@ -21,17 +21,24 @@ def blackBoxes():
     values = ((i + 1) * 10 for i in Idx)  # to distinguish from indices
     yield from permutations(values)
 
+def blackBoxesWithReplacement():
+    # TODO: cmp w/ itertools.combinations_with_replacement
+    values = ((i + 1) * 10 for i in Idx)  # to distinguish from indices
+    yield from product(values, repeat=len(Idx))
 
 assert count(blackBoxes()) == perm(5) == 120
+assert count(blackBoxesWithReplacement()) == 5**5
+# print(*islice(blackBoxesWithReplacement(), 5), sep='\n')
 # print(*blackBoxes(), sep='\n')
 # print(*islice(blackBoxes(), 10), sep='\n')
 
 
 def isThisOne(E) -> bool:
-    for V in blackBoxes():
+    # for V in blackBoxes():
+    for V in blackBoxesWithReplacement():
         less = [[] for _ in Idx]  # if i -> j: j in less[i]
         for i, j in E:
-            if V[i] > V[j]:
+            if V[i] >= V[j]: # `==` needed for with replacement
                 less[i].append(j)
             else:
                 less[j].append(i)

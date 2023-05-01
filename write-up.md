@@ -12,7 +12,7 @@ enough information can be derived from the graph to compare any two nodes IFF (i
 A complete graph of 5 nodes has (5*(5-1)/2 = 10) edges.
 (10 select 7) = 120 cases.
 The full permutation of 5 distinct elements = 5! = 120 cases.
-- [ ] permit equal numbers
+- [x] permit equal numbers
 
 # result
 ```
