@@ -13,12 +13,3 @@ A complete graph of 5 nodes has (5*(5-1)/2 = 10) edges.
 (10 select 7) = 120 cases.
 The full permutation of 5 distinct elements = 5! = 120 cases.
 - [x] permit equal numbers
-
-# result
-```
-found: 20
-(0, 1) (0, 2) (0, 3) (0, 4) (1, 2) (2, 3) (3, 4)
-```
-![](graphviz.svg)
-
-[^src](https://dreampuf.github.io/GraphvizOnline/#graph%20%7B%0A%20%20%20%200%20--%201%3B%0A%20%20%20%200%20--%202%3B%0A%20%20%20%200%20--%203%3B%0A%20%20%20%200%20--%204%3B%0A%20%20%20%201%20--%202%3B%0A%20%20%20%202%20--%203%3B%0A%20%20%20%203%20--%204%3B%0A%7D%0A)
