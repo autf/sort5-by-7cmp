@@ -39,7 +39,7 @@ def isThisOne(E) -> bool:
         # raise SystemExit
 
         def hasPath(i, j):
-            assert V[i] > V[j]
+            # assert V[i] > V[j]
             todo = [i]
             done = [False] * len(Idx)
             done[i] = True
@@ -56,7 +56,7 @@ def isThisOne(E) -> bool:
         for i, j in allEdges():
             if V[i] < V[j]:
                 i, j = j, i
-            if not hasPath(i, j):
+            if not hasPath(i, j) or hasPath(j, i): # <- eqv. not (hasPath(i, j) and not hasPath(j, i))
                 return False
         return True
 
